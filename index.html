@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+  <meta http-equiv='X-UA-Compatible' content='ie=edge' />
+  <title>Sistemas Distribuídos - Chat</title>
+  <!-- Bootstrap CSS-->
+  <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'
+    integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous'>
+  <style>
+    .card-body {
+      overflow-y:auto;
+      overflow-x:auto;
+    }
+    .bg {
+      background: url(https://visme.co/blog/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-028.jpg) no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+  </style>
+</head>
+
+<body class='bg'>
+  <div class='container-fluid px-md-5' style='margin-top:30px'>
+    <div class='row justify-content-between'>
+      <div class='col-md-2 px-md-5'>
+        <img src='http://protimber.lnec.pt/logos/UM.png' class='float-left' alt='UM-EE'>
+      </div>
+      <div class='col-md-10 text-white'>
+        <h2>Universidade do Minho - Engenharia e Gestão de Sistemas de Informação</h2>
+        <h5>Sistemas Distribuídos - Projeto 1</h5>
+        <p>Sistema de Resposta de
+          Audiências</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class='d-flex flex-row p-3 align-items-center' style='margin-top: 20px'>
+    <!-- Chatroom -->
+    
+    <div class='container col-md-8'>
+        <div class='alert alert-danger alert-dismissible fade show' >
+            <button type='button' class='close' data-dismiss='alert'>&times;</button>
+            <strong>Erro!</strong> Esse username não existe, por isso não pode enviar mensagem. Tente outra vez.
+          </div>
+      <div class='card text-center' style='height:700px'>
+        <div class='card-header font-weight-bold'>
+          Chatroom
+        </div>
+        <div class='card-body chatdiv'>          
+          <table class='table table-striped'>
+            <thead>
+              <tr>
+                <th style=" width: px;">Time</th>
+                <th class='col-1'>Username</th>
+                <th class='col-md-4'>Mensagem</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td>1</td><td>1</td></tr><tr><td>1</td><td>1</td><td>1</td></tr><tr><td>1</td><td>1</td><td>1</td></tr><tr><td>1</td><td>1</td><td>1</td></tr><tr><td>1</td><td>1</td><td>1</td></tr><tr><td>1</td><td>1</td><td>1</td></tr><tr><td>1</td><td>1</td><td>1</td></tr><tr><td>1</td><td>1</td><td>1</td></tr><tr><td>1</td><td>1</td><td>1</td></tr><tr><td>1</td><td>1</td><td>1</td></tr><tr><td>1</td><td>1</td><td>1</td></tr><tr><td>1</td><td>1</td><td>1</td></tr><tr><td>1</td><td>1</td><td>1</td></tr><tr><td>1</td><td>1</td><td>1</td></tr><tr><td>1</td><td>1</td><td>1</td></tr><tr><td>1</td><td>1</td><td>1</td></tr><tr><td>1</td><td>1</td><td>1</td></tr><tr><td>1</td><td>1</td><td>1</td></tr><tr><td>1</td><td>1</td><td>1</td></tr><tr><td>1</td><td>1</td><td>1</td></tr><tr><td>1</td><td>1</td><td>1</td></tr><tr><td>1</td><td>1</td><td>1</td></tr><tr><td>1</td><td>1</td><td>1</td></tr><tr><td>1</td><td>1</td><td>1</td></tr><tr><td>1</td><td>1</td><td>1</td></tr><tr><td>1</td><td>1</td><td>1</td></tr><tr><td>1</td><td>1</td><td>1</td></tr><tr><td>1</td><td>1</td><td>1</td></tr> 
+            </tbody>
+          </table>
+        
+      </div>
+        <div class='card-footer'>
+            <form class='form-inline' action='/CriarMensagem' method='POST'>
+                <input type='text' id='name' name='name' class='form-control col-sm-2' placeholder='Nome/ID' /><input type='text' id='mensagem' name='mensagem' class='form-control col-sm-8' placeholder='Mensagem' />
+                <input type='submit' value='Enviar Mensagem' class='btn btn-primary col-sm-2' />
+            </form>
+            </div>
+          </div>
+        </div>
+ 
+
+    <div class='container col-md-3'>
+        
+      <!-- Registar user -->
+      <div class='container p-3'>         
+        <form class='text-center font-weight-bold text-white form-inline' action='/CriarConta' method='POST'>
+          <label for='name'> Crie um novo utilizador para utilizar o chat!</label>
+            <input type='text' id='name' name='name' class='form-control w-75' placeholder='Nome/ID' />
+            <input type='submit' value='Registar' class='btn btn-primary w-25' />
+        </form>
+      </div>
+    <!--   <div class='alert alert-danger alert-dismissible fade show' >
+          <button type='button' class='close' data-dismiss='alert'>&times;</button>
+          <strong>Erro!</strong> Esse username já existe. Tente outra vez.
+        </div> -->
+
+    <!-- Lista de utilizadores-->
+    <div class='card text-center text-black bg-light' style='height:600px'>
+      <div class='card-header font-weight-bold'>
+        User List
+      </div>
+      <div class='card-body'>
+        <table class='table table-striped'>
+          <tbody>
+              
+          </tbody>
+        </table>
+      </div>
+      <div class='card-footer'>
+        <form method='get' action='/RotaTabelas'>
+          <button type='submit' value='RotaTabelas' class='btn btn-primary'>Atualizar Lista</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+
+
+
+  <!-- Bootstrap JS-->
+  <script src='https://code.jquery.com/jquery-3.3.1.slim.min.js'
+    integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo'
+    crossorigin='anonymous'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js'
+    integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1'
+    crossorigin='anonymous'></script>
+  <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js'
+    integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM'
+    crossorigin='anonymous'></script>
+</body>
+
+</html>
